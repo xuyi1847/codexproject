@@ -21,3 +21,13 @@ For testing you can set the answer, limit attempts, and even change the range:
 ```bash
 python3 guess_number.py --answer 42 --max-attempts 5 --min 1 --max 50
 ```
+
+## Flappy Bird Clone
+
+This game requires the `pygame` package. Run it with:
+
+```bash
+python3 flappy_bird.py
+```
+
+Press the space bar to flap and fly through the gaps in the pipes. Your score increases every time you pass a pipe.
