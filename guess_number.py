@@ -1,11 +1,33 @@
 import random
+import argparse
+
+
+def parse_args():
+    """Parse command line arguments for testing and gameplay options."""
+    parser = argparse.ArgumentParser(description="Play the Guess the Number game")
+    parser.add_argument(
+        "--answer",
+        type=int,
+        help="Specify the number to guess (useful for automated tests)",
+    )
+    parser.add_argument(
+        "--max-attempts",
+        type=int,
+        default=0,
+        help="Limit the number of attempts; 0 means unlimited",
+    )
+    return parser.parse_args()
 
 def main():
-    number_to_guess = random.randint(1, 100)
+    args = parse_args()
+    number_to_guess = args.answer if args.answer is not None else random.randint(1, 100)
     attempts = 0
     print('Welcome to the Guess the Number Game!')
     print("I'm thinking of a number between 1 and 100.")
     while True:
+        if args.max_attempts and attempts >= args.max_attempts:
+            print(f'Sorry, you ran out of attempts. The number was {number_to_guess}.')
+            break
         try:
             guess = int(input('Take a guess: '))
         except ValueError:
