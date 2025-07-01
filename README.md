@@ -31,3 +31,15 @@ python3 flappy_bird.py
 ```
 
 Press the space bar to flap and fly through the gaps in the pipes. Your score increases every time you pass a pipe.
+
+## Flappy Bird 3D
+
+For a simple 3D version using OpenGL you also need the `PyOpenGL` package. Run it with:
+
+```bash
+python3 flappy_bird_3d.py
+```
+
+This variant renders the bird and pipes as extruded boxes to create a basic 3D
+effect. The gameplay remains the same: press the space bar to keep the bird
+aloft and avoid the pipes.
